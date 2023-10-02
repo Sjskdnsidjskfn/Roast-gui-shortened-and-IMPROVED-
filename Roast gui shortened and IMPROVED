@@ -1,0 +1,20 @@
+function Chat(message)
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message , "All")
+end
+
+Rizz_Lines = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sjskdnsidjskfn/Roast-gui-improved-version/main/Roast%20gui%20improved%20version"))();
+
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/mikhailramlal/Rizzer/main/ui"))()
+
+local Rizz_Main = lib:Window("Roast Gui(unfriendly) 😈")
+
+Rizz_Main:Label("Made by Random Person")
+
+Rizz_Main:Dropdown("List of Roasts", Rizz_Lines, function(line)
+    getgenv().line2 = tostring(line)
+end, true)
+
+
+Rizz_Main:Button("Roast" , function() 
+    Chat(getgenv().line2)
+end)
